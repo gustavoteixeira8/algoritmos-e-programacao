@@ -2,12 +2,14 @@ import java.util.Scanner;
 
 public class Exercicio30 {
 
-    public static void main(String args[]) {
-  		Scanner input = new Scanner(System.in);
+	public static void main(String args[]) {
+		Scanner input = new Scanner(System.in);
 
-		System.out.println("Digite o número da função: ");
+		System.out.println("Digite o nÃºmero da funÃ§Ã£o: ");
 
 		int numeroFuncao = input.nextInt();
+
+		input.close();
 
 		switch (numeroFuncao) {
 			case 1: {
@@ -35,8 +37,8 @@ public class Exercicio30 {
 				break;
 			}
 			default: {
-				System.out.println("Número não corresponde a nenhuma função");
+				System.out.println("NÃºmero nÃ£o corresponde a nenhuma funÃ§Ã£o");
 			}
 		}
-    }
+	}
 }
