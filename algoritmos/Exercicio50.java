@@ -5,12 +5,13 @@ public class Exercicio50 {
 		int precoUnitario = 0;
 		int quantidadeProduto = 0;
 		int precoFinal = 0;
+		String eFim = "";
 		Scanner input = new Scanner(System.in);
-
-		System.out.println("Digite FIM para finalizar o processo ou aperte ENTER para continuar.");
+		Scanner anotherInput = new Scanner(System.in);
 
 		while (true) {
-			String eFim = input.nextLine();
+			System.out.println("Digite FIM para finalizar o processo ou aperte ENTER para continuar.");
+			eFim = input.nextLine();
 
 			if ("FIM".equals(eFim)) {
 				break;
@@ -18,14 +19,15 @@ public class Exercicio50 {
 
 			System.out.println("Digite preço unitário e a quantidade de produtos: ");
 
-			precoUnitario = input.nextInt();
-			quantidadeProduto = input.nextInt();
+			precoUnitario = anotherInput.nextInt();
+			quantidadeProduto = anotherInput.nextInt();
 
 			precoFinal += precoUnitario * quantidadeProduto;
 		}
 
+		anotherInput.close();
 		input.close();
 
-		System.out.println("O pre�o final �: " + precoFinal);
+		System.out.println("O preço final é: " + precoFinal);
 	}
 }
