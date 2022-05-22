@@ -10,7 +10,7 @@ public class Exercicio39 {
 		int somaImpares = 0;
 
 		for (int i = 0; i < 10; i++) {
-			System.out.println("Digite um número: ");
+			System.out.println("Digite um nï¿½mero: ");
 			int num = input.nextInt();
 
 			if (num == 0) {
@@ -26,10 +26,10 @@ public class Exercicio39 {
 				somaImpares += num;
 			}
 		}
+		input.close();
 
 		System.out.println("Quantidade pares: " + quantidadePares);
 		System.out.println("Soma pares: " + somaPares);
-
 
 		System.out.println("Quantidade impares: " + quantidadeImpares);
 		System.out.println("Soma pares: " + somaImpares);

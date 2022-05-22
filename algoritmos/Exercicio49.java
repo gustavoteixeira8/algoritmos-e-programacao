@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 public class Exercicio49 {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		int somaPositivos = 0;
 		int quantidadeNegativos = 0;
 		Scanner input = new Scanner(System.in);
 
 		while (true) {
-			System.out.println("Digite um número diferente de 0: ");
+			System.out.println("Digite um nÃºmero diferente de 0: ");
 
 			int num = input.nextInt();
 
@@ -22,7 +22,9 @@ public class Exercicio49 {
 			}
 		}
 
+		input.close();
+
 		System.out.println("Soma dos positivos: " + somaPositivos);
 		System.out.println("Quantidade dos negativos: " + quantidadeNegativos);
-    }
+	}
 }
