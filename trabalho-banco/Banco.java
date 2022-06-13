@@ -1,3 +1,14 @@
+
+/**
+ * Integrantes do grupo:
+ * Davi Samuel de Oliveira Sousa
+ * Gustavo Figueiredo Teixeira
+ * Henrique Ramos da Silva Batista
+ * Marcus Israel Campos Braga AssunÃ§Ã£o
+ * Samuel Caldeira Cota
+ * Thiago Augusto da Silva
+ */
+
 import java.util.Scanner;
 
 public class Banco {
@@ -11,27 +22,27 @@ public class Banco {
     System.out.printf("Entre com o nome do cliente: ");
     nomeCliente = input.nextLine();
 
-    System.out.printf("Entre com o número da Conta Corrente: ");
+    System.out.printf("Entre com o nï¿½mero da Conta Corrente: ");
     contaCorrente = input.nextInt();
 
     System.out.printf("Entre com o saldo inicial da Conta Corrente (%d): ", contaCorrente);
     saldoCorrente = input.nextFloat();
 
-    System.out.printf("Entre com o número da Conta Poupança: ");
+    System.out.printf("Entre com o nï¿½mero da Conta Poupanï¿½a: ");
     contaPoupanca = input.nextInt();
 
-    System.out.printf("Entre com seu saldo inicial da Conta Poupança (%d): ", contaPoupanca);
+    System.out.printf("Entre com seu saldo inicial da Conta Poupanï¿½a (%d): ", contaPoupanca);
     saldoPoupanca = input.nextFloat();
 
     while (true) {
       System.out.println("-------------------------------");
-      System.out.println("Qual operação deseja realizar: ");
+      System.out.println("Qual operaï¿½ï¿½o deseja realizar: ");
       System.out.println("1 - Creditar");
       System.out.println("2 - Debitar");
       System.out.println("3 - Transferir");
       System.out.println("4 - Ver Saldo");
       System.out.println("5 - Sair");
-      System.out.printf("Opção escolhida: ");
+      System.out.printf("Opï¿½ï¿½o escolhida: ");
 
       opcaoEscolhida = input.nextInt();
 
@@ -43,12 +54,12 @@ public class Banco {
         case 1: {
           System.out.println("Qual conta: ");
           System.out.println("1 - Corrente");
-          System.out.println("2 - Poupança");
-          System.out.printf("Opção escolhida: ");
+          System.out.println("2 - Poupanï¿½a");
+          System.out.printf("Opï¿½ï¿½o escolhida: ");
           int contaParaCreditar = input.nextInt();
 
           if (contaParaCreditar != 1 && contaParaCreditar != 2) {
-            System.out.println("Opção inválida");
+            System.out.println("Opï¿½ï¿½o invï¿½lida");
             break;
           }
 
@@ -69,7 +80,7 @@ public class Banco {
 
           if (contaParaCreditar == 2) {
             saldoPoupanca += valorCreditar;
-            System.out.printf("Saldo atual na Conta Poupança %d: %7.2f\n", contaPoupanca, saldoPoupanca);
+            System.out.printf("Saldo atual na Conta Poupanï¿½a %d: %7.2f\n", contaPoupanca, saldoPoupanca);
             break;
           }
           break;
@@ -77,13 +88,13 @@ public class Banco {
         case 2: {
           System.out.println("Qual conta: ");
           System.out.println("1 - Corrente");
-          System.out.println("2 - Poupança");
-          System.out.printf("Opção escolhida: ");
+          System.out.println("2 - Poupanï¿½a");
+          System.out.printf("Opï¿½ï¿½o escolhida: ");
           int contaParaDebitar = input.nextInt();
 
           if (contaParaDebitar != 1 && contaParaDebitar != 2) {
-          	System.out.println("Opção inválida");
-          	break;
+            System.out.println("Opï¿½ï¿½o invï¿½lida");
+            break;
           }
 
           System.out.printf("Qual valor a debitar na conta escolhida: ");
@@ -99,12 +110,12 @@ public class Banco {
 
           if (contaParaDebitar == 2) {
             if (valorDebitar > saldoPoupanca) {
-              System.out.printf("Valor a debitar não pode ser maior que seu saldo: %7.2f\n", saldoPoupanca);
+              System.out.printf("Valor a debitar nï¿½o pode ser maior que seu saldo: %7.2f\n", saldoPoupanca);
               break;
             }
             saldoPoupanca -= valorDebitar;
 
-            System.out.printf("Saldo atual na Conta Poupança %d: %7.2f\n", contaPoupanca, saldoPoupanca);
+            System.out.printf("Saldo atual na Conta Poupanï¿½a %d: %7.2f\n", contaPoupanca, saldoPoupanca);
 
             break;
           }
@@ -113,47 +124,47 @@ public class Banco {
         }
         case 3: {
           System.out.println("Entre: ");
-          System.out.println("1 - Conta corrente e poupança");
-          System.out.println("2 - Conta poupança e corrente");
-          System.out.printf("Opção escolhida: ");
+          System.out.println("1 - Conta corrente e poupanï¿½a");
+          System.out.println("2 - Conta poupanï¿½a e corrente");
+          System.out.printf("Opï¿½ï¿½o escolhida: ");
           int opcaoParaTransferir = input.nextInt();
 
           if (opcaoParaTransferir != 1 && opcaoParaTransferir != 2) {
-          	System.out.println("Opção inválida");
-          	break;
+            System.out.println("Opï¿½ï¿½o invï¿½lida");
+            break;
           }
 
           if (opcaoParaTransferir == 1) {
-			System.out.printf("Qual valor a transferir da CC %s para CP %s: ", contaCorrente, contaPoupanca);
-			float valorParaTransferir = input.nextFloat();
-			saldoPoupanca += valorParaTransferir;
-          	saldoCorrente -= valorParaTransferir;
+            System.out.printf("Qual valor a transferir da CC %s para CP %s: ", contaCorrente, contaPoupanca);
+            float valorParaTransferir = input.nextFloat();
+            saldoPoupanca += valorParaTransferir;
+            saldoCorrente -= valorParaTransferir;
           } else if (opcaoParaTransferir == 2) {
-			System.out.printf("Qual valor a transferir da CP %s para CC %s: ", contaPoupanca, contaCorrente);
-			float valorParaTransferir = input.nextFloat();
+            System.out.printf("Qual valor a transferir da CP %s para CC %s: ", contaPoupanca, contaCorrente);
+            float valorParaTransferir = input.nextFloat();
 
-			if (saldoPoupanca < valorParaTransferir) {
-				System.out.printf("Valor a debitar não pode ser maior que seu saldo: %7.2f\n", saldoPoupanca);
-				break;
-			}
+            if (saldoPoupanca < valorParaTransferir) {
+              System.out.printf("Valor a debitar nï¿½o pode ser maior que seu saldo: %7.2f\n", saldoPoupanca);
+              break;
+            }
 
-			saldoPoupanca -= valorParaTransferir;
-          	saldoCorrente += valorParaTransferir;
+            saldoPoupanca -= valorParaTransferir;
+            saldoCorrente += valorParaTransferir;
           }
 
-		  System.out.printf("Saldo atual na Conta Corrente %s ->  %7.2f\n", contaCorrente, saldoCorrente);
-		  System.out.printf("Saldo atual na Conta Poupança %s ->  %7.2f\n", contaPoupanca, saldoPoupanca);
+          System.out.printf("Saldo atual na Conta Corrente %s ->  %7.2f\n", contaCorrente, saldoCorrente);
+          System.out.printf("Saldo atual na Conta Poupanï¿½a %s ->  %7.2f\n", contaPoupanca, saldoPoupanca);
 
           break;
         }
         case 4: {
-		  System.out.printf("Senhor %s\n", nomeCliente);
-		  System.out.printf("Saldo da sua Conta Corrente %s ->  %7.2f\n", contaCorrente, saldoCorrente);
-		  System.out.printf("Saldo da sua Conta Poupança %s ->  %7.2f\n", contaPoupanca, saldoPoupanca);
+          System.out.printf("Senhor %s\n", nomeCliente);
+          System.out.printf("Saldo da sua Conta Corrente %s ->  %7.2f\n", contaCorrente, saldoCorrente);
+          System.out.printf("Saldo da sua Conta Poupanï¿½a %s ->  %7.2f\n", contaPoupanca, saldoPoupanca);
           break;
         }
         default: {
-          System.out.println("Opção inválida");
+          System.out.println("Opï¿½ï¿½o invï¿½lida");
         }
       }
     }
